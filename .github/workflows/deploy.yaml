@@ -28,7 +28,7 @@ jobs:
       - name: Buil and push Docker Image
         uses: docker/build-push-action@v7
         with:
-          contest: .
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-demo-hello-world:latest
 
