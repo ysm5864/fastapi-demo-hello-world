@@ -37,7 +37,7 @@ jobs:
       # 1. Docker Hub의 latest Image를 pull하고
       # 2. 기존 fastapi-demo Container를 제거하고
       # 3. 새 Container를 EC2의 80번 포트와 Container의 8000번 포트를 연결해 실행하세요.
-      - name: Run commands on EC2
+      - name: Deploy on EC2
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -51,4 +51,3 @@ jobs:
               --restart unless-stopped \
               -p 80:8000 \
               ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-demo-hello-world:latest
-      
