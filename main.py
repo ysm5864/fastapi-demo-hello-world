@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def get_root():
-    return {"message": "Hello, World!"}
+    return {"message": "Hello, Docker!"}
 
 
 if __name__ == "__main__":
